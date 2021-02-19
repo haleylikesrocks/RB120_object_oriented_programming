@@ -1,16 +1,38 @@
-# 1 Find the Class
+# # 1 Find the Class
 
-puts "Hello".class
-puts 5.class
-puts [1, 2, 3].class
+# puts "Hello".class
+# puts 5.class
+# puts [1, 2, 3].class
 
-# 2 Create the Class
+# 2 Create the Class # 4 What Are You?
 
-class Cat 
+module Walkable
+  def walk 
+    puts "Let's got for a walk!"
+  end
+end
+
+class Cat
+  include Walkable
+  
+  attr_accessor :name
+
+  def initialize(name)
+    @name = name
+  end
+
+  def greet
+    puts "Hello! My name is #{self.name}!"
+  end
 end
 
 # 3 Create the Class
 
-kitty = Cat.new
+kitty = Cat.new('Sophie')
+kitty.greet
 
-# 4 What Are You?
+kitty.name = 'Luna'
+
+kitty.greet
+
+kitty.walk
